@@ -32,7 +32,7 @@ const createCompactLangNode = ({ lang, totalSize, x, y }) => {
     <g transform="translate(${x}, ${y})">
       <circle cx="5" cy="6" r="5" fill="${color}" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        ${lang.name} ${percentage}%
+        ${lang.name} - ${percentage}%
       </text>
     </g>
   `;
@@ -129,11 +129,11 @@ const renderTopLanguages = (topLangs, options = {}) => {
 
         const output = `
           <rect
-            mask="url(#rect-mask)" 
+            mask="url(#rect-mask)"
             data-testid="lang-progress"
-            x="${progressOffset}" 
+            x="${progressOffset}"
             y="0"
-            width="${progress}" 
+            width="${progress}"
             height="8"
             fill="${lang.color || "#858585"}"
           />
@@ -146,8 +146,8 @@ const renderTopLanguages = (topLangs, options = {}) => {
     finalLayout = `
       <mask id="rect-mask">
         <rect x="0" y="0" width="${
-          width - 50
-        }" height="8" fill="white" rx="5" />
+      width - 50
+      }" height="8" fill="white" rx="5" />
       </mask>
       ${compactProgressBar}
       ${createLanguageTextNode({
